@@ -4,7 +4,8 @@
   "description": "A service for server-side rendering your JavaScript views",
   "main": "lib/index.js",
   "scripts": {
-    "prepublish": "not-in-publish || safe-publish-latest && npm run build",
+    "prepublishOnly": "not-in-publish || safe-publish-latest",
+    "prepare": "npm run build",
     "clean": "rimraf lib",
     "prebuild": "npm run clean",
     "build": "babel src -d lib",
